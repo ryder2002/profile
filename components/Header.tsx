@@ -15,7 +15,7 @@ export default function Header() {
         className="relative"
       >
         <div className="absolute -inset-3 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-full blur-lg opacity-40" />
-        <div className="relative w-44 h-44 md:w-52 md:h-52 flex-shrink-0">
+        <div className="relative w-56 h-56 md:w-64 md:h-64 flex-shrink-0">
           <Image
             src={siteConfig.avatarSrc}
             alt={`Ảnh đại diện của ${siteConfig.teacherName}`}

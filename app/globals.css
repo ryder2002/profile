@@ -35,7 +35,6 @@ body::before {
   z-index: -1;
 }
 
-/* Gradient border container */
 .gradient-border {
   position: relative;
   background: rgba(255, 255, 255, 0.08);
@@ -68,7 +67,42 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Lightbox overlay */
+/* Running border animation */
+@keyframes runBorder {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+
+.running-border {
+  position: relative;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+
+.running-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    90deg,
+    #1e3a5f,
+    #87ceeb,
+    #5bb5e0,
+    #87ceeb,
+    #1e3a5f
+  );
+  background-size: 200% 100%;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: runBorder 3s linear infinite;
+  pointer-events: none;
+}
+
 .lightbox-overlay {
   position: fixed;
   inset: 0;

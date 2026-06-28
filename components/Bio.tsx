@@ -28,30 +28,26 @@ export default function Bio() {
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
     >
-      <motion.div variants={itemVariants} className="relative p-6 bg-white/5 rounded-2xl border border-[#87ceeb]/20 backdrop-blur-sm overflow-hidden group hover:border-[#87ceeb]/40 transition-all duration-300">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-t-2xl" />
-        <p className="text-white/90 leading-relaxed relative z-10">
+      <motion.div variants={itemVariants} className="running-border rounded-2xl bg-white/5 backdrop-blur-sm p-6 hover:bg-white/10 transition-all duration-300">
+        <p className="text-white/90 leading-relaxed">
           {siteConfig.bio.paragraph1}
         </p>
       </motion.div>
 
-      <motion.div variants={itemVariants} className="relative p-6 bg-white/5 rounded-2xl border border-[#5bb5e0]/20 backdrop-blur-sm overflow-hidden group hover:border-[#5bb5e0]/40 transition-all duration-300">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-t-2xl" />
-        <p className="text-white/90 leading-relaxed relative z-10">
+      <motion.div variants={itemVariants} className="running-border rounded-2xl bg-white/5 backdrop-blur-sm p-6 hover:bg-white/10 transition-all duration-300">
+        <p className="text-white/90 leading-relaxed">
           {siteConfig.bio.paragraph2}
         </p>
       </motion.div>
 
-      <motion.div variants={itemVariants} className="relative p-6 bg-white/5 rounded-2xl border border-[#1e3a5f]/30 backdrop-blur-sm overflow-hidden group hover:border-[#1e3a5f]/50 transition-all duration-300">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-t-2xl" />
-        <p className="text-white/90 leading-relaxed relative z-10">
+      <motion.div variants={itemVariants} className="running-border rounded-2xl bg-white/5 backdrop-blur-sm p-6 hover:bg-white/10 transition-all duration-300">
+        <p className="text-white/90 leading-relaxed">
           {siteConfig.bio.paragraph3}
         </p>
       </motion.div>
 
-      <motion.div variants={itemVariants} className="relative p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm overflow-hidden group hover:border-[#87ceeb]/30 transition-all duration-300">
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-t-2xl" />
-        <p className="text-white/90 leading-relaxed relative z-10">
+      <motion.div variants={itemVariants} className="running-border rounded-2xl bg-white/5 backdrop-blur-sm p-6 hover:bg-white/10 transition-all duration-300">
+        <p className="text-white/90 leading-relaxed">
           {siteConfig.bio.paragraph4}
         </p>
       </motion.div>
