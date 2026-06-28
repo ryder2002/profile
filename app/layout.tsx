@@ -9,8 +9,8 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Đinh Công Nhất - Giảng Viên TOEIC",
-  description: "Trang giới thiệu giảng viên TOEIC Đinh Công Nhất",
+  title: "Đinh Công Nhất - Anh giáo TOEIC",
+  description: "Trang giới thiệu anh giáo TOEIC Đinh Công Nhất",
 };
 
 export default function RootLayout({

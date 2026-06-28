@@ -29,15 +29,15 @@ function FacebookIcon({ className }: { className?: string }) {
 }
 
 const socials = [
-  { href: siteConfig.socials.tiktok, icon: TikTokIcon, label: "TikTok", color: "hover:bg-pink-500/30" },
-  { href: siteConfig.socials.instagram, icon: InstagramIcon, label: "Instagram", color: "hover:bg-gradient-to-br hover:from-yellow-500/30 hover:via-pink-500/30 hover:to-purple-500/30" },
-  { href: siteConfig.socials.facebook, icon: FacebookIcon, label: "Facebook", color: "hover:bg-blue-500/30" },
+  { href: siteConfig.socials.tiktok, icon: TikTokIcon, label: "TikTok", bgColor: "hover:bg-[#87ceeb]/30" },
+  { href: siteConfig.socials.instagram, icon: InstagramIcon, label: "Instagram", bgColor: "hover:bg-gradient-to-br hover:from-[#1e3a5f]/50 hover:via-[#87ceeb]/30 hover:to-[#5bb5e0]/30" },
+  { href: siteConfig.socials.facebook, icon: FacebookIcon, label: "Facebook", bgColor: "hover:bg-[#5bb5e0]/30" },
 ];
 
 export default function Footer() {
   return (
     <footer className="px-6 py-8 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#87ceeb]/50 to-transparent" />
       
       <motion.div
         className="flex items-center justify-center gap-4"
@@ -51,14 +51,14 @@ export default function Footer() {
             href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className={`w-12 h-12 flex items-center justify-center bg-white/10 backdrop-blur-md rounded-xl text-white shadow-lg border border-white/20 transition-all duration-300 ${social.color}`}
+            className={`w-12 h-12 flex items-center justify-center bg-[#1e3a5f]/50 backdrop-blur-md rounded-xl text-white shadow-lg border border-[#87ceeb]/30 transition-all duration-300 ${social.bgColor}`}
             aria-label={social.label}
             custom={index}
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { delay: index * 0.1, duration: 0.4 } }
             }}
-            whileHover={{ scale: 1.15, y: -4 }}
+            whileHover={{ scale: 1.15, y: -4, borderColor: "rgba(135, 206, 235, 0.8)" }}
             whileTap={{ scale: 0.95 }}
           >
             <social.icon className="w-5 h-5" />
@@ -74,7 +74,7 @@ export default function Footer() {
         transition={{ delay: 0.4, duration: 0.5 }}
       >
         <span>© {new Date().getFullYear()} {siteConfig.teacherName}</span>
-        <span className="text-red-400/60">
+        <span className="text-[#87ceeb]/60">
           <Heart className="w-4 h-4 inline fill-current" />
         </span>
       </motion.div>
