@@ -16,13 +16,13 @@ export default function Home() {
           <div className="gradient-border">
             <div className="card-content">
               <Header />
-              <div className="h-px bg-gradient-to-r from-transparent via-[#87ceeb]/30 to-transparent" />
+              <div className="mx-6 h-px bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0]" />
               <Bio />
-              <div className="h-px bg-gradient-to-r from-transparent via-[#87ceeb]/30 to-transparent" />
+              <div className="mx-6 h-px bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0]" />
               <Certificate />
-              <div className="h-px bg-gradient-to-r from-transparent via-[#87ceeb]/30 to-transparent" />
+              <div className="mx-6 h-px bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0]" />
               <CTASection />
-              <div className="h-px bg-gradient-to-r from-transparent via-[#87ceeb]/30 to-transparent" />
+              <div className="mx-6 h-px bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0]" />
               <Footer />
             </div>
           </div>

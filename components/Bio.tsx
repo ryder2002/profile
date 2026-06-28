@@ -30,30 +30,27 @@ export default function Bio() {
     >
       <motion.div variants={itemVariants} className="relative p-6 bg-white/5 rounded-2xl border border-[#87ceeb]/20 backdrop-blur-sm overflow-hidden group hover:border-[#87ceeb]/40 transition-all duration-300">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-t-2xl" />
-        <div className="absolute -inset-full top-0 h-full w-1/2 bg-gradient-to-r from-transparent via-[#87ceeb]/10 to-transparent -skew-x-[20deg] animate-shimmer" />
         <p className="text-white/90 leading-relaxed relative z-10">
           {siteConfig.bio.paragraph1}
         </p>
       </motion.div>
 
       <motion.div variants={itemVariants} className="relative p-6 bg-white/5 rounded-2xl border border-[#5bb5e0]/20 backdrop-blur-sm overflow-hidden group hover:border-[#5bb5e0]/40 transition-all duration-300">
-        <div className="absolute top-0 left-0 w-1/2 h-1 bg-gradient-to-r from-[#87ceeb] to-[#5bb5e0] rounded-tl-2xl" />
-        <div className="absolute -inset-full top-0 h-full w-1/2 bg-gradient-to-r from-transparent via-[#5bb5e0]/10 to-transparent -skew-x-[20deg] animate-shimmer" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-t-2xl" />
         <p className="text-white/90 leading-relaxed relative z-10">
           {siteConfig.bio.paragraph2}
         </p>
       </motion.div>
 
       <motion.div variants={itemVariants} className="relative p-6 bg-white/5 rounded-2xl border border-[#1e3a5f]/30 backdrop-blur-sm overflow-hidden group hover:border-[#1e3a5f]/50 transition-all duration-300">
-        <div className="absolute top-0 left-1/4 w-1/4 h-1 bg-gradient-to-r from-[#5bb5e0] to-[#1e3a5f] rounded-tl-2xl" />
-        <div className="absolute -inset-full top-0 h-full w-1/2 bg-gradient-to-r from-transparent via-[#1e3a5f]/10 to-transparent -skew-x-[20deg] animate-shimmer" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-t-2xl" />
         <p className="text-white/90 leading-relaxed relative z-10">
           {siteConfig.bio.paragraph3}
         </p>
       </motion.div>
 
       <motion.div variants={itemVariants} className="relative p-6 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm overflow-hidden group hover:border-[#87ceeb]/30 transition-all duration-300">
-        <div className="absolute -inset-full top-0 h-full w-1/2 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-[20deg] animate-shimmer" />
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-t-2xl" />
         <p className="text-white/90 leading-relaxed relative z-10">
           {siteConfig.bio.paragraph4}
         </p>
