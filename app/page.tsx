@@ -12,16 +12,21 @@ export default function Home() {
       <AudioPlayer />
       <StarField />
       <main className="min-h-screen relative">
-        <div className="max-w-card mx-auto bg-white/10 backdrop-blur-xl shadow-2xl rounded-2xl my-4 overflow-hidden border border-white/20">
-          <Header />
-          <hr className="border-white/10" />
-          <Bio />
-          <hr className="border-white/10" />
-          <Certificate />
-          <hr className="border-white/10" />
-          <CTASection />
-          <hr className="border-white/10" />
-          <Footer />
+        <div className="max-w-2xl mx-auto my-6">
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-teal-500/20 rounded-3xl blur-xl" />
+            <div className="relative bg-white/10 backdrop-blur-xl shadow-2xl rounded-3xl overflow-hidden border border-white/20">
+              <Header />
+              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <Bio />
+              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <Certificate />
+              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <CTASection />
+              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <Footer />
+            </div>
+          </div>
         </div>
       </main>
     </>

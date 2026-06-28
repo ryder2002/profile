@@ -6,11 +6,31 @@
   --navy: #0F2A4A;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-be-vietnam-pro), system-ui, sans-serif;
   background: radial-gradient(ellipse at top, #0a1628 0%, #050d17 50%, #020810 100%);
   color: #ffffff;
   min-height: 100vh;
+}
+
+/* Animated background gradient */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Lightbox overlay */
@@ -23,6 +43,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  backdrop-filter: blur(8px);
 }
 
 /* Smooth transitions */
@@ -35,4 +56,49 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--navy);
   outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.7);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+  color: white;
+}
+
+/* Card hover glow effect */
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(20, 184, 166, 0.5));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.card-glow:hover::before {
+  opacity: 1;
 }

@@ -1,19 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, Facebook } from "lucide-react";
 import { siteConfig } from "@/lib/config";
 
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
@@ -22,24 +22,38 @@ export default function Bio() {
 
   return (
     <motion.section
-      className="px-6 py-6 space-y-5"
+      className="px-6 py-6 space-y-6"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
     >
-      <motion.p variants={itemVariants} className="text-white/90 leading-relaxed">
-        {siteConfig.bio.paragraph1}
-      </motion.p>
-      <motion.p variants={itemVariants} className="text-white/90 leading-relaxed">
-        {siteConfig.bio.paragraph2}
-      </motion.p>
-      <motion.p variants={itemVariants} className="text-white/90 leading-relaxed">
-        {siteConfig.bio.paragraph3}
-      </motion.p>
-      <motion.p variants={itemVariants} className="text-white/90 leading-relaxed">
-        {siteConfig.bio.paragraph4}
-      </motion.p>
+      <motion.div variants={itemVariants} className="relative p-6 bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 backdrop-blur-sm">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-400 rounded-t-2xl" />
+        <p className="text-white/90 leading-relaxed">
+          {siteConfig.bio.paragraph1}
+        </p>
+      </motion.div>
+
+      <motion.div variants={itemVariants} className="relative p-6 bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 backdrop-blur-sm">
+        <div className="absolute top-0 left-0 w-1/2 h-1 bg-gradient-to-r from-cyan-400 to-teal-400 rounded-tl-2xl" />
+        <p className="text-white/90 leading-relaxed">
+          {siteConfig.bio.paragraph2}
+        </p>
+      </motion.div>
+
+      <motion.div variants={itemVariants} className="relative p-6 bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 backdrop-blur-sm">
+        <div className="absolute top-0 left-1/4 w-1/4 h-1 bg-gradient-to-r from-teal-400 to-blue-400 rounded-tl-2xl" />
+        <p className="text-white/90 leading-relaxed">
+          {siteConfig.bio.paragraph3}
+        </p>
+      </motion.div>
+
+      <motion.div variants={itemVariants} className="relative p-6 bg-gradient-to-br from-white/5 to-white/10 rounded-2xl border border-white/10 backdrop-blur-sm">
+        <p className="text-white/90 leading-relaxed">
+          {siteConfig.bio.paragraph4}
+        </p>
+      </motion.div>
 
       <motion.div
         variants={itemVariants}
@@ -49,27 +63,30 @@ export default function Bio() {
           href={zaloLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-white hover:text-white/70 font-medium transition-colors"
+          className="group flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-blue-500/30 to-cyan-500/30 hover:from-blue-500/50 hover:to-cyan-500/50 rounded-xl border border-white/20 transition-all duration-300"
         >
-          <MessageCircle className="w-5 h-5" aria-hidden="true" />
-          <span>Zalo: {siteConfig.contact.zaloPhone}</span>
+          <div className="flex items-center justify-center w-10 h-10 bg-blue-500/30 rounded-lg group-hover:bg-blue-500/50 transition-colors">
+            <MessageCircle className="w-5 h-5 text-cyan-300" />
+          </div>
+          <div>
+            <span className="text-xs text-white/50 block">Liên hệ</span>
+            <span className="text-white font-medium">Zalo: {siteConfig.contact.zaloPhone}</span>
+          </div>
         </a>
 
         <a
           href={siteConfig.contact.facebookUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-white hover:text-white/70 font-medium transition-colors"
+          className="group flex items-center gap-3 px-5 py-3 bg-gradient-to-r from-blue-500/30 to-teal-500/30 hover:from-blue-500/50 hover:to-teal-500/50 rounded-xl border border-white/20 transition-all duration-300"
         >
-          <svg
-            className="w-5 h-5"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-          >
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-          </svg>
-          <span>Facebook</span>
+          <div className="flex items-center justify-center w-10 h-10 bg-blue-600/30 rounded-lg group-hover:bg-blue-600/50 transition-colors">
+            <Facebook className="w-5 h-5 text-blue-300" />
+          </div>
+          <div>
+            <span className="text-xs text-white/50 block">Theo dõi</span>
+            <span className="text-white font-medium">Facebook</span>
+          </div>
         </a>
       </motion.div>
     </motion.section>
