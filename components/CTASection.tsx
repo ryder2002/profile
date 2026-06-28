@@ -17,17 +17,10 @@ const buttonIcons: Record<string, React.ReactNode> = {
 };
 
 const buttonGradients: Record<string, string> = {
-  "Đăng ký học TOEIC Listening & Reading": "from-[#1e3a5f]/50 via-[#87ceeb]/20 to-[#5bb5e0]/30",
-  "Ứng dụng học tiếng Anh của Nhất": "from-[#5bb5e0]/30 via-[#87ceeb]/20 to-[#1e3a5f]/50",
-  "Tổng hợp ngữ pháp": "from-[#87ceeb]/30 via-[#5bb5e0]/20 to-[#87ceeb]/30",
-  "ETS 2026": "from-[#1e3a5f]/40 via-[#5bb5e0]/20 to-[#1e3a5f]/40",
-};
-
-const borderGradients: Record<string, string> = {
-  "Đăng ký học TOEIC Listening & Reading": "from-[#87ceeb] to-[#5bb5e0]",
-  "Ứng dụng học tiếng Anh của Nhất": "from-[#5bb5e0] to-[#87ceeb]",
-  "Tổng hợp ngữ pháp": "from-[#87ceeb] via-[#5bb5e0] to-[#1e3a5f]",
-  "ETS 2026": "from-[#5bb5e0] to-[#1e3a5f]",
+  "Đăng ký học TOEIC Listening & Reading": "from-[#1e3a5f]/60 to-[#87ceeb]/20",
+  "Ứng dụng học tiếng Anh của Nhất": "from-[#5bb5e0]/30 to-[#1e3a5f]/50",
+  "Tổng hợp ngữ pháp": "from-[#87ceeb]/30 to-[#5bb5e0]/20",
+  "ETS 2026": "from-[#1e3a5f]/50 to-[#5bb5e0]/20",
 };
 
 const buttonVariants = {
@@ -60,8 +53,7 @@ export default function CTASection({ buttons = siteConfig.ctaButtons }: CTASecti
       <div className="flex flex-col gap-4">
         {buttons.map((button, index) => {
           const icon = buttonIcons[button.label] || <Sparkles className="w-5 h-5" />;
-          const gradient = buttonGradients[button.label] || "from-[#1e3a5f]/50 via-[#87ceeb]/20 to-[#5bb5e0]/30";
-          const borderGradient = borderGradients[button.label] || "from-[#87ceeb] to-[#5bb5e0]";
+          const gradient = buttonGradients[button.label] || "from-[#1e3a5f]/60 to-[#87ceeb]/20";
 
           return (
             <motion.a
@@ -69,7 +61,7 @@ export default function CTASection({ buttons = siteConfig.ctaButtons }: CTASecti
               href={button.href}
               target={button.href.startsWith("http") ? "_blank" : undefined}
               rel={button.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              className="group relative flex items-center gap-4 w-full px-6 py-5 rounded-2xl overflow-hidden transition-all duration-300"
+              className="group relative flex items-center gap-4 w-full px-6 py-5 rounded-2xl border border-[#87ceeb]/30 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-[#87ceeb]/50 transition-all duration-300"
               custom={index}
               variants={buttonVariants}
               initial="hidden"
@@ -78,16 +70,6 @@ export default function CTASection({ buttons = siteConfig.ctaButtons }: CTASecti
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
-              {/* Animated border background */}
-              <span className="absolute inset-0 rounded-2xl p-[2px] bg-gradient-to-r via-[#87ceeb] from-[#1e3a5f] to-[#5bb5e0] animate-rotate-border" />
-              <span 
-                className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-r from-[#87ceeb] via-[#5bb5e0] to-[#1e3a5f]"
-                style={{ backgroundSize: '200% 100%', animation: 'shimmer 2s linear infinite' }}
-              />
-              
-              {/* Inner background */}
-              <span className={`absolute inset-[1px] rounded-[14px] bg-gradient-to-r ${gradient} backdrop-blur-md`} />
-              
               {button.iconSrc ? (
                 <Image
                   src={button.iconSrc}
@@ -97,7 +79,7 @@ export default function CTASection({ buttons = siteConfig.ctaButtons }: CTASecti
                   className="w-12 h-12 rounded-xl relative z-10"
                 />
               ) : (
-                <span className="relative z-10 flex items-center justify-center w-12 h-12 bg-[#1e3a5f]/60 rounded-xl shadow-lg border border-[#87ceeb]/30 group-hover:bg-[#1e3a5f]/80 group-hover:border-[#87ceeb]/50 transition-all">
+                <span className="relative z-10 flex items-center justify-center w-12 h-12 bg-[#1e3a5f]/70 rounded-xl shadow-lg border border-[#87ceeb]/30">
                   {icon}
                 </span>
               )}

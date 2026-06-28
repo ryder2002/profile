@@ -14,16 +14,15 @@ export default function Header() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative"
       >
-        <div className="absolute -inset-4 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-full blur-xl opacity-50 animate-pulse" />
-        <div className="relative w-36 h-36 md:w-44 md:h-44 flex-shrink-0">
+        <div className="absolute -inset-3 bg-gradient-to-r from-[#1e3a5f] via-[#87ceeb] to-[#5bb5e0] rounded-full blur-lg opacity-40" />
+        <div className="relative w-44 h-44 md:w-52 md:h-52 flex-shrink-0">
           <Image
             src={siteConfig.avatarSrc}
             alt={`Ảnh đại diện của ${siteConfig.teacherName}`}
             fill
-            className="rounded-full object-cover border-4 border-[#87ceeb]/40 shadow-2xl"
+            className="rounded-full object-cover border-4 border-[#87ceeb]/50 shadow-2xl"
             priority
           />
-          <div className="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-[#87ceeb] via-[#5bb5e0] to-[#1e3a5f] -z-10" />
         </div>
       </motion.div>
 
@@ -35,7 +34,7 @@ export default function Header() {
       >
         <div className="flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-[#1e3a5f]/50 to-[#87ceeb]/20 rounded-full border border-[#87ceeb]/30">
           <Award className="w-4 h-4 text-[#87ceeb]" />
-          <span className="text-xs uppercase tracking-wider text-[#87ceeb] font-medium">Chuyên gia TOEIC</span>
+          <span className="text-xs uppercase tracking-wider text-[#87ceeb] font-medium">Anh Giáo</span>
         </div>
         
         <h1 className="text-4xl md:text-5xl font-bold gradient-text drop-shadow-lg">
@@ -55,7 +54,7 @@ export default function Header() {
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-1">
               <Users className="w-4 h-4 text-[#87ceeb]" />
-              <span className="text-xl font-bold text-white">500+</span>
+              <span className="text-xl font-bold text-white">100+</span>
             </div>
             <span className="text-xs text-white/50">Học viên</span>
           </div>
@@ -65,7 +64,7 @@ export default function Header() {
           <div className="flex flex-col items-center">
             <div className="flex items-center gap-1">
               <TrendingUp className="w-4 h-4 text-[#5bb5e0]" />
-              <span className="text-xl font-bold text-white">850+</span>
+              <span className="text-xl font-bold text-white">935</span>
             </div>
             <span className="text-xs text-white/50">Toeic Score</span>
           </div>

@@ -13,8 +13,8 @@ export default function Home() {
       <StarField />
       <main className="min-h-screen relative">
         <div className="max-w-2xl mx-auto my-6 px-4">
-          <div className="animated-border">
-            <div className="card-inner">
+          <div className="gradient-border">
+            <div className="card-content">
               <Header />
               <div className="h-px bg-gradient-to-r from-transparent via-[#87ceeb]/30 to-transparent" />
               <Bio />

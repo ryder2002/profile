@@ -20,7 +20,6 @@ body {
   min-height: 100vh;
 }
 
-/* Animated background */
 body::before {
   content: "";
   position: fixed;
@@ -36,71 +35,33 @@ body::before {
   z-index: -1;
 }
 
-/* Animated border gradient keyframes */
-@keyframes borderGlow {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes rotateGradient {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
-  }
-}
-
-.animated-border {
+/* Gradient border container */
+.gradient-border {
   position: relative;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   border-radius: 1.5rem;
-  overflow: hidden;
 }
 
-.animated-border::before {
+.gradient-border::before {
   content: "";
   position: absolute;
-  inset: -3px;
-  background: linear-gradient(
-    90deg,
-    #1e3a5f,
-    #87ceeb,
-    #5bb5e0,
-    #2d4a6f,
-    #87ceeb,
-    #1e3a5f
-  );
-  background-size: 300% 100%;
+  inset: -2px;
+  background: linear-gradient(135deg, #1e3a5f, #87ceeb, #5bb5e0, #2d4a6f);
   border-radius: inherit;
   z-index: -1;
-  animation: borderGlow 4s ease-in-out infinite, rotateGradient 8s linear infinite;
 }
 
-.animated-border::after {
+.gradient-border::after {
   content: "";
   position: absolute;
-  inset: 3px;
-  background: rgba(15, 28, 46, 0.9);
-  border-radius: calc(1.5rem - 3px);
+  inset: 0;
+  background: rgba(15, 28, 46, 0.95);
+  border-radius: calc(1.5rem - 2px);
   z-index: -1;
 }
 
-.card-inner {
+.card-content {
   position: relative;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
   border-radius: 1.5rem;
@@ -120,19 +81,16 @@ body::before {
   backdrop-filter: blur(12px);
 }
 
-/* Smooth transitions */
 .transition-transform {
   transition: transform 0.2s ease-in-out;
 }
 
-/* Focus states for accessibility */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid #87ceeb;
   outline-offset: 2px;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -150,51 +108,14 @@ button:focus-visible {
   background: linear-gradient(180deg, #a0d8f0, #87ceeb);
 }
 
-/* Selection color */
 ::selection {
   background: rgba(135, 206, 235, 0.4);
   color: white;
 }
 
-/* Glow effects */
-.glow-navy {
-  box-shadow: 0 0 30px rgba(30, 58, 95, 0.5);
-}
-
-.glow-lightblue {
-  box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
-}
-
-/* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #87ceeb 0%, #5bb5e0 50%, #2d4a6f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* Hover shimmer effect */
-.shimmer-hover {
-  position: relative;
-  overflow: hidden;
-}
-
-.shimmer-hover::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(135, 206, 235, 0.2),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
-
-.shimmer-hover:hover::before {
-  left: 100%;
 }
